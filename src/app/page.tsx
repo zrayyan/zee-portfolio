@@ -219,7 +219,9 @@ export default function Home() {
               href="/namaz/pray.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors font-medium border-2 border-primary/50"
+              role="button"
+              aria-label="Open Live Demo of AJAX Prayer Mashup (opens in new tab)"
+              className="inline-flex items-center space-x-2 px-6 py-3 bg-[#3B82F6] text-white rounded-lg hover:bg-[#2563EB] transition-colors font-medium border border-[#2563EB] shadow-lg shadow-[#3B82F6]/20 z-20"
             >
               <span>Live Demo</span>
             </a>
