@@ -4,10 +4,6 @@ date: "2020-02-06T21:01:33+00:00"
 excerpt: "In this guide, we are going to create OpenStack cloud based on two nodes. One node will host most of OpenStack services and the ‘nova’ node will be used for computing and running our test virtual machines."
 ---
 
-
-
-                
-                                    
 <p>In this guide, we are going to create OpenStack cloud based on two nodes. One node will host most of OpenStack services and the ‘nova’ node will be used for computing and running our test virtual machines.</p>
 
 
@@ -237,6 +233,8 @@ excerpt: "In this guide, we are going to create OpenStack cloud based on two nod
 
 
 <p>yum install openstack-keystone python-keystoneclient</p>
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="447" src="/images/wp-content/uploads/openstack-dashboard-overview-1024x447.png" alt="Openstack Dashboard" class="wp-image-169" srcset="/images/wp-content/uploads/openstack-dashboard-overview-1024x447.png 1024w, /images/wp-content/uploads/openstack-dashboard-overview-300x131.png 300w, /images/wp-content/uploads/openstack-dashboard-overview-768x335.png 768w, /images/wp-content/uploads/openstack-dashboard-overview-1536x670.png 1536w, /images/wp-content/uploads/openstack-dashboard-overview.png 1900w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption>OpenStack Dashboard Overview</figcaption></figure>
 
 
 
