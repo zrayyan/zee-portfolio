@@ -32,12 +32,11 @@ const projects = [
     demo: "#",
   },
   {
-    title: "CISSP Study Guide",
-    description: "Comprehensive study materials and guides for CISSP certification covering all 8 domains of information security management.",
-    technologies: ["CISSP", "Information Security", "Certification", "Study Materials"],
+    title: "AJAX Based Geo Mashup APP",
+    description: "Location-aware mobile application with AJAX-based geo mashup functionality, integrating mobile services with web services and telecom services (IP Multimedia Sub System).",
+    technologies: ["AJAX", "JavaScript", "Geo Mashup", "Mobile Development", "IP Multimedia Sub System"],
     github: "#",
-    demo: "#",
-    images: ["/images/wp-content/uploads/networ-security-introduction-cissp.jpg"]
+    demo: "/namaz/pray.html",
   },
 ];
 

@@ -79,6 +79,50 @@ export default function Research() {
               ))}
             </div>
 
+            {/* Detailed Research Description */}
+            <motion.section
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mt-20"
+            >
+              <h2 className="text-4xl font-bold mb-12 text-center text-primary">Research Overview</h2>
+              <div className="max-w-4xl mx-auto text-center mb-8">
+                <p className="text-lg text-foreground/80 mb-6">
+                  I collaborated with a research team specializing in Service Oriented Architecture and standards-compliant Web 2.0 and Telco 2.0. My research focus was on mobile mashups and user interface composition approaches for Mobile Devices, Mobile Engineering, Web, Web engineering, quality, and privacy in integrated mobile applications.
+                </p>
+                <p className="text-lg text-foreground/80 mb-6">
+                  My main goal was to assist mobile device users to develop and integrate mobile applications (Android), mobile services with web services. Moreover, development of location-aware mobile applications (Android) and their integration with the telecom services (IP Multimedia Sub System) mashup for smart device users having no prior knowledge of programming languages by hiding the development complexity.
+                </p>
+                <div className="flex justify-center gap-4">
+                  <a
+                    href="https://zee.linxsol.com/uncategorized/phd-presentation/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/80 transition-colors"
+                  >
+                    My PhD Presentation
+                  </a>
+                  <a
+                    href="https://drive.google.com/file/d/0B6OX4OBHjolLMGQzZmFjOTYtY2FkMC00ZWU5LTgwNGQtZTkyYmY0OGYyZGI5/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-secondary text-white rounded-full hover:bg-secondary/80 transition-colors"
+                  >
+                    Read More About Research
+                  </a>
+                  <a
+                    href="/namaz/pray.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-highlight text-white rounded-full hover:bg-highlight/80 transition-colors"
+                  >
+                    AJAX Based Geo Mashup APP
+                  </a>
+                </div>
+              </div>
+            </motion.section>
+
             {/* Research Presentations */}
             <motion.section
               initial={{ opacity: 0, y: 50 }}

@@ -28,6 +28,22 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* As an Entrepreneur */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="py-20 px-6 bg-secondary/5"
+      >
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl font-bold mb-8 text-primary">As an Entrepreneur</h2>
+          <p className="text-lg leading-relaxed">
+            I provide IT consultancy, develop eCommerce websites, and offer managed cloud hosting for clients.
+            My solutions are attractive, elegant, simple, informative, and accessible to all.
+          </p>
+        </div>
+      </motion.section>
+
       {/* Research Focus Areas */}
       <motion.section
         initial={{ opacity: 0 }}
