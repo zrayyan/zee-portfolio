@@ -217,9 +217,11 @@ export default function Home() {
             </p>
             <a
               href="/namaz/pray.html"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 px-6 py-3 bg-secondary text-white rounded-lg hover:bg-secondary/80 transition-colors font-medium"
             >
-              <span>Try the Live Demo</span>
+              <span>Live Demo</span>
             </a>
           </div>
         </div>

@@ -107,6 +107,8 @@ export default function Projects() {
                       </a>
                       <a
                         href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center space-x-2 text-secondary hover:text-secondary/80 transition-colors"
                       >
                         <ExternalLink size={20} />

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://your-portfolio.com/about/</loc><lastmod>2026-03-06T21:27:33.027Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-portfolio.com/contact/</loc><lastmod>2026-03-06T21:27:33.027Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-portfolio.com/</loc><lastmod>2026-03-06T21:27:33.027Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-portfolio.com/projects/</loc><lastmod>2026-03-06T21:27:33.027Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-portfolio.com/research/</loc><lastmod>2026-03-06T21:27:33.027Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-portfolio.com/writing/future-of-ai/</loc><lastmod>2026-03-06T21:27:33.027Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-portfolio.com/writing/resilient-systems/</loc><lastmod>2026-03-06T21:27:33.027Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-portfolio.com/writing/</loc><lastmod>2026-03-06T21:27:33.027Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-portfolio.com/about/</loc><lastmod>2026-03-06T21:32:48.130Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-portfolio.com/contact/</loc><lastmod>2026-03-06T21:32:48.131Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-portfolio.com/</loc><lastmod>2026-03-06T21:32:48.131Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-portfolio.com/projects/</loc><lastmod>2026-03-06T21:32:48.131Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-portfolio.com/research/</loc><lastmod>2026-03-06T21:32:48.131Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-portfolio.com/writing/future-of-ai/</loc><lastmod>2026-03-06T21:32:48.131Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-portfolio.com/writing/resilient-systems/</loc><lastmod>2026-03-06T21:32:48.131Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-portfolio.com/writing/</loc><lastmod>2026-03-06T21:32:48.131Z</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
