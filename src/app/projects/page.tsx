@@ -32,9 +32,9 @@ const projects = [
     demo: "#",
   },
   {
-    title: "AJAX Based Geo Mashup APP",
-    description: "Location-aware mobile application with AJAX-based geo mashup functionality, integrating mobile services with web services and telecom services (IP Multimedia Sub System).",
-    technologies: ["AJAX", "JavaScript", "Geo Mashup", "Mobile Development", "IP Multimedia Sub System"],
+    title: "AJAX Based Prayer Mashup",
+    description: "Location-aware mobile application with AJAX-based prayer mashup functionality, integrating mobile services with web services and telecom services (IP Multimedia Sub System).",
+    technologies: ["AJAX", "JavaScript", "Prayer Mashup", "Mobile Development", "IP Multimedia Sub System"],
     github: "#",
     demo: "/namaz/pray.html",
   },

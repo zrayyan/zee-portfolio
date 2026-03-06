@@ -212,7 +212,7 @@ export default function Home() {
           <div className="bg-background rounded-lg border border-primary/20 p-8 hover:border-primary/50 transition-colors">
             <h3 className="text-2xl font-semibold mb-4 text-highlight">AJAX Based Prayer Mashup</h3>
             <p className="text-lg leading-relaxed mb-6 text-foreground/80">
-              An innovative location-aware mobile application featuring AJAX-based geo mashup functionality.
+              An innovative location-aware mobile application featuring AJAX-based prayer mashup functionality.
               Integrates mobile services with web services and telecom services (IP Multimedia Sub System).
             </p>
             <a
