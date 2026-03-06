@@ -3,7 +3,7 @@
 import Navigation from "@/components/Navigation";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { Send, Mail } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -116,12 +116,14 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mt-16 text-center"
             >
+              <div className="flex items-center justify-center space-x-2 mb-4">
+                <Mail size={20} className="text-primary" />
+                <a href="mailto:zeeshan@yzinfotech.com" className="text-lg font-medium text-primary hover:text-primary/80 transition-colors">
+                  zeeshan@yzinfotech.com
+                </a>
+              </div>
               <p className="text-foreground/60">
-                Prefer direct contact? Reach out via{" "}
-                <a href="mailto:contact@example.com" className="text-primary hover:text-primary/80 transition-colors">
-                  email
-                </a>{" "}
-                or connect on{" "}
+                Prefer direct contact? Reach out via email or connect on{" "}
                 <a href="#" className="text-secondary hover:text-secondary/80 transition-colors">
                   LinkedIn
                 </a>

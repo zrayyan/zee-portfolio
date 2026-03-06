@@ -110,7 +110,7 @@ export default function Projects() {
                         className="flex items-center space-x-2 text-secondary hover:text-secondary/80 transition-colors"
                       >
                         <ExternalLink size={20} />
-                        <span>Demo</span>
+                        <span>{project.demo !== "#" ? "Live Demo" : "Demo"}</span>
                       </a>
                     </div>
                   </div>

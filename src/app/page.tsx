@@ -39,6 +39,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold mb-8 text-primary">As an Entrepreneur</h2>
           <p className="text-lg leading-relaxed">
             I provide IT consultancy, develop eCommerce websites, and offer managed cloud hosting for clients.
+            Additionally, I own and operate multiple franchises in the telecommunications industry.
             My solutions are attractive, elegant, simple, informative, and accessible to all.
           </p>
         </div>
