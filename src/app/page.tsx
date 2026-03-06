@@ -3,6 +3,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -215,16 +216,20 @@ export default function Home() {
               An innovative location-aware mobile application featuring AJAX-based prayer mashup functionality.
               Integrates mobile services with web services and telecom services (IP Multimedia Sub System).
             </p>
-            <a
+            <motion.a
               href="/namaz/pray.html"
               target="_blank"
               rel="noopener noreferrer"
               role="button"
               aria-label="Open Live Demo of AJAX Prayer Mashup (opens in new tab)"
               className="inline-flex items-center space-x-2 px-6 py-3 bg-[#3B82F6] text-white rounded-lg hover:bg-[#2563EB] transition-colors font-medium border border-[#2563EB] shadow-lg shadow-[#3B82F6]/20 z-20"
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+              whileHover={{ y: -2, scale: 1.02 }}
             >
+              <ExternalLink size={18} className="opacity-90" />
               <span>Live Demo</span>
-            </a>
+            </motion.a>
           </div>
         </div>
       </motion.section>

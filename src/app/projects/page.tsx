@@ -105,15 +105,18 @@ export default function Projects() {
                         <Github size={20} />
                         <span>Code</span>
                       </a>
-                      <a
+                      <motion.a
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center space-x-2 text-secondary hover:text-secondary/80 transition-colors"
+                        animate={project.demo !== "#" ? { y: [0, -4, 0] } : undefined}
+                        transition={project.demo !== "#" ? { duration: 2.2, repeat: Infinity, ease: "easeInOut" } : undefined}
+                        whileHover={{ y: -2 }}
                       >
                         <ExternalLink size={20} />
                         <span>{project.demo !== "#" ? "Live Demo" : "Demo"}</span>
-                      </a>
+                      </motion.a>
                     </div>
                   </div>
                 </motion.div>
