@@ -37,7 +37,7 @@ function AnimatedBackground() {
     <Canvas className="absolute left-0 md:-left-24 top-0 w-full md:w-[20%] h-full">
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} />
-      <Sphere args={[1, 100, 200]} scale={0.8}>
+      <Sphere args={[1, 100, 200]} scale={1.0}>
         <MeshDistortMaterial
           color="#4B2E2A" /* dark coffee brown */
           attach="material"
