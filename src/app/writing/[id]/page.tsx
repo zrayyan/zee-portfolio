@@ -3,6 +3,7 @@ import { getPostData, getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import CodeHighlighter from '@/components/CodeHighlighter';
+import CodeCopy from '@/components/CodeCopy';
 
 export async function generateStaticParams() {
   const posts = await getSortedPostsData();
@@ -50,6 +51,7 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
             />
             {/* syntax highlighting for code blocks */}
             <CodeHighlighter />
+            <CodeCopy />
           </div>
         </article>
       </main>

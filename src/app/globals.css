@@ -35,6 +35,19 @@ pre code {
   margin-bottom: 0.5rem;
 }
 
+/* Copy button for code blocks */
+.code-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* ensure pre containers have relative positioning when we wrap them */
+pre + .code-copy-btn, .code-copy-btn {
+  z-index: 40;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
