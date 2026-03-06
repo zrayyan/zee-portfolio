@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import { getPostData, getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import CodeHighlighter from '@/components/CodeHighlighter';
 
 export async function generateStaticParams() {
   const posts = await getSortedPostsData();
@@ -47,6 +48,8 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
               className="prose prose-lg prose-invert max-w-none"
               dangerouslySetInnerHTML={{ __html: post.contentHtml || '' }}
             />
+            {/* syntax highlighting for code blocks */}
+            <CodeHighlighter />
           </div>
         </article>
       </main>

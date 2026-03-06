@@ -10,6 +10,31 @@
   --foreground: #ffffff;
 }
 
+/* Code block styling improvements */
+pre {
+  background: #0B1220; /* dark backdrop */
+  color: #E6EEF3;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow: auto;
+  border: 1px solid rgba(59,130,246,0.08);
+}
+
+pre code {
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+
+/* small label for CLI code blocks */
+.code-label {
+  font-size: 0.75rem;
+  color: var(--color-white);
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

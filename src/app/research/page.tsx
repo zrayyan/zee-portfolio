@@ -180,6 +180,37 @@ export default function Research() {
                   />
                   <p className="text-sm text-foreground/60">Featured in cybersecurity seminars and training sessions</p>
                 </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="p-6 bg-background rounded-lg border border-primary/20 hover:border-primary/50 transition-colors"
+                >
+                  <h3 className="text-2xl font-semibold mb-4 text-secondary">PhD Presentation (Prezi)</h3>
+                  <p className="text-foreground/80 mb-4">
+                    My PhD presentation — interactive Prezi slides covering research on mobile mashups, UI composition, and integration of mobile and telecom services.
+                  </p>
+                  <div className="mb-4">
+                    <a
+                      href="https://prezi.com/ejnjdcw6b_oy/prexi/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors mr-3"
+                    >
+                      Open Prezi Presentation
+                    </a>
+                    <a
+                      href="https://zee.linxsol.com/uncategorized/phd-presentation/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-6 py-3 bg-secondary text-white rounded-lg hover:bg-secondary/80 transition-colors"
+                    >
+                      Blog Post / Slides
+                    </a>
+                  </div>
+                  <p className="text-sm text-foreground/60">Opens in a new tab. Note: some Prezi embeds may not allow inline iframes.</p>
+                </motion.div>
               </div>
             </motion.section>
 
