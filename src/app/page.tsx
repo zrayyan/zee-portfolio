@@ -45,31 +45,6 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Featured Application */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="py-20 px-6 bg-highlight/5"
-      >
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-8 text-primary">Featured Application</h2>
-          <div className="bg-background rounded-lg border border-primary/20 p-8 hover:border-primary/50 transition-colors">
-            <h3 className="text-2xl font-semibold mb-4 text-highlight">AJAX Based Prayer Mashup</h3>
-            <p className="text-lg leading-relaxed mb-6 text-foreground/80">
-              An innovative location-aware mobile application featuring AJAX-based geo mashup functionality.
-              Integrates mobile services with web services and telecom services (IP Multimedia Sub System).
-            </p>
-            <a
-              href="/namaz/pray.html"
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-secondary text-white rounded-lg hover:bg-secondary/80 transition-colors font-medium"
-            >
-              <span>Try the Live Demo</span>
-            </a>
-          </div>
-        </div>
-      </motion.section>
-
       {/* Research Focus Areas */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -221,6 +196,31 @@ export default function Home() {
                 <p className="text-sm text-foreground/60">{post.date}</p>
               </motion.article>
             ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Featured Application */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="py-20 px-6 bg-highlight/5"
+      >
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl font-bold mb-8 text-primary">Featured Application</h2>
+          <div className="bg-background rounded-lg border border-primary/20 p-8 hover:border-primary/50 transition-colors">
+            <h3 className="text-2xl font-semibold mb-4 text-highlight">AJAX Based Prayer Mashup</h3>
+            <p className="text-lg leading-relaxed mb-6 text-foreground/80">
+              An innovative location-aware mobile application featuring AJAX-based geo mashup functionality.
+              Integrates mobile services with web services and telecom services (IP Multimedia Sub System).
+            </p>
+            <a
+              href="/namaz/pray.html"
+              className="inline-flex items-center space-x-2 px-6 py-3 bg-secondary text-white rounded-lg hover:bg-secondary/80 transition-colors font-medium"
+            >
+              <span>Try the Live Demo</span>
+            </a>
           </div>
         </div>
       </motion.section>
