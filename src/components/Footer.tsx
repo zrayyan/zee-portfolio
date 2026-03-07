@@ -24,8 +24,6 @@ export default function Footer() {
 
           <div>
             <h4 className="text-lg font-medium text-primary mb-2">Contact</h4>
-            <p className="text-foreground/80">Main Street 123, New York</p>
-            <p className="text-foreground/80">Phone: <a href="tel:+17867862005" className="text-primary">+1 786 786 2005</a></p>
             <p className="text-foreground/80">Email: <a href="mailto:zeeshan@yzinfotech.com" className="text-primary">zeeshan@yzinfotech.com</a></p>
           </div>
         </div>

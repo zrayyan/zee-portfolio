@@ -5,6 +5,11 @@ import { motion } from "framer-motion";
 
 const timelineEvents = [
   {
+    year: "2020",
+    title: "Entrepreneurship Journey",
+    description: "Launched my first entrepreneurial venture, laying the foundation for future technical and business projects.",
+  },
+  {
     year: "2010",
     title: "Started System Administration Career",
     description: "Began working with enterprise system administration, focusing on Linux/Unix environments and network infrastructure.",
@@ -35,9 +40,21 @@ const timelineEvents = [
     description: "Expanded expertise into digital marketing strategies, including Facebook ads optimization and scaling techniques for business growth.",
   },
   {
-    year: "2022",
+    year: "2025",
+    title: "Mobile App Launch",
+    description: (
+      <>
+        Developed the <a href="https://imuslimlife.com" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">iMuslimLife</a> app, available on{' '}
+        <a href="https://apps.apple.com/app/6743494825" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">App Store</a> and{' '}
+        <a href="https://play.google.com/store/apps/details?id=com.rayyan.salatemustaqeem" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">Google Play</a>. Web version at{' '}
+        <a href="https://imuslimlife.com/#/prayer-times" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">imuslimlife.com</a>.
+      </>
+    ),
+  },
+  {
+    year: "2010",
     title: "Research and Writing",
-    description: "Established personal blog sharing technical knowledge and insights on system administration, security, and emerging technologies.",
+    description: "Started documenting technical knowledge in blog posts, sharing insights on system administration and security.",
   },
   {
     year: "2024",
