@@ -11,6 +11,7 @@ export interface PostData {
   title: string;
   date: string;
   excerpt: string;
+  categories?: string[];
   contentHtml?: string;
 }
 
@@ -29,10 +30,11 @@ export async function getSortedPostsData(): Promise<PostData[]> {
         .process(matterResult.content);
       const contentHtml = processedContent.toString();
 
+      const data = matterResult.data as { title: string; date: string; excerpt: string; categories?: string[] };
       return {
         id,
         contentHtml,
-        ...(matterResult.data as { title: string; date: string; excerpt: string }),
+        ...(data),
       };
     });
 
@@ -45,11 +47,19 @@ export async function getPostData(id: string): Promise<PostData> {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const matterResult = matter(fileContents);
 
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  // if the content already looks like raw HTML (e.g. generated from WordPress),
+  // we can bypass remark processing which may strip or escape HTML blocks.
+  let contentHtml: string;
+  if (/^\s*</.test(matterResult.content)) {
+    contentHtml = matterResult.content;
+  } else {
+    const processedContent = await remark()
+      .use(html)
+      .process(matterResult.content);
+    contentHtml = processedContent.toString();
+  }
 
+  // (removed debug logging)
   return {
     id,
     contentHtml,

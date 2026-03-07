@@ -24,6 +24,10 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 export default async function Post({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const post = await getPostData(id);
+  const posts = await getSortedPostsData();
+  const index = posts.findIndex((p) => p.id === id);
+  const prev = index < posts.length - 1 ? posts[index + 1] : null;
+  const next = index > 0 ? posts[index - 1] : null;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -41,6 +45,12 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
 
             <header className="mb-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">{post.title}</h1>
+              <div className="flex items-center gap-4 mb-3">
+                <span className="text-sm uppercase text-foreground/60">ZEESHAN</span>
+                {post.categories && post.categories.length > 0 && (
+                  <span className="text-sm text-foreground/60">{post.categories.join(' • ')}</span>
+                )}
+              </div>
               <p className="text-lg text-foreground/80 mb-4">{post.excerpt}</p>
               <p className="text-sm text-foreground/60">{post.date}</p>
             </header>
@@ -52,6 +62,21 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
             {/* syntax highlighting for code blocks */}
             <CodeHighlighter />
             <CodeCopy />
+
+            {/* Prev / Next navigation */}
+            <nav className="mt-8 flex justify-between text-primary">
+              {prev ? (
+                <Link href={`/writing/${prev.id}`} className="hover:underline">
+                  ← {prev.title}
+                </Link>
+              ) : <div />}
+
+              {next ? (
+                <Link href={`/writing/${next.id}`} className="hover:underline">
+                  {next.title} →
+                </Link>
+              ) : <div />}
+            </nav>
           </div>
         </article>
       </main>
