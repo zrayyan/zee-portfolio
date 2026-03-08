@@ -3,6 +3,7 @@
 import Navigation from "@/components/Navigation";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Apple } from "lucide-react";
+import { useRef } from "react";
 
 const timelineEvents = [
   {
