@@ -25,11 +25,11 @@ Cursor & pointer effects
 ✅ **Loading screen / splash**
 − lightweight animated logo or progress bar while the page hydrates. (implemented loader overlay)
 
-🌙 Theme & Accessibility
-Dark/light toggle with Tailwind’s class strategy and persist in localStorage.
-Respect prefers-reduced-motion by disabling non‑essential animations.
-Ensure all interactive elements are keyboard‑focusable with visible outlines.
-Add ARIA labels on custom components (project cards, graph nodes).
+✅ **Theme & Accessibility**
+Dark/light toggle with Tailwind’s class strategy and persist in localStorage. (already implemented)
+Respect prefers-reduced-motion by disabling non‑essential animations. (cursor & loader respect, others use reduced-motion flag)
+Ensure all interactive elements are keyboard‑focusable with visible outlines. (added focus rings throughout)
+Add ARIA labels on custom components (project cards, graph nodes). (added)
 
 ⚙️ Performance & Deployment
 Pre‑generate sitemap.xml at build time (Next has built‑in support).
