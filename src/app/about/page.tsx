@@ -1,7 +1,7 @@
 "use client";
 
 import Navigation from "@/components/Navigation";
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { Apple } from "lucide-react";
 
 const timelineEvents = [
@@ -67,6 +67,13 @@ const timelineEvents = [
 ];
 
 export default function About() {
+  const timelineRefContainer = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRefContainer,
+    offset: ["start end", "end start"],
+  });
+  const lineScale = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
@@ -154,16 +161,21 @@ export default function About() {
             {/* Timeline */}
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary/30"></div>
+              <motion.div
+                ref={timelineRef}
+                className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/30 origin-top"
+                style={{ scaleY: lineScale }}
+              />
 
-              <div className="space-y-12">
+              <div className="space-y-12" ref={timelineRefContainer}>
                 {timelineEvents.map((event, index) => (
                   <motion.div
                     key={`${event.year}-${index}`}
                     initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className={`flex items-center ${index % 2 === 0 ? "justify-start" : "justify-end"}`}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, amount: 0.5 }}
                   >
                     <div className="w-1/2 text-center">
                       <div className="bg-background border border-primary/20 rounded-lg p-6 hover:border-primary/50 transition-colors">
@@ -172,7 +184,11 @@ export default function About() {
                         <span className="text-sm font-bold text-primary">{event.year}</span>
                       </div>
                     </div>
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full"></div>
+                    <motion.div
+                      className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full"
+                      whileInView={{ scale: 1.5, backgroundColor: "#3B82F6" }}
+                      viewport={{ once: false, amount: 0.5 }}
+                    />
                   </motion.div>
                 ))}
               </div>
