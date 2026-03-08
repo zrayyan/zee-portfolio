@@ -11,9 +11,9 @@
 − animated “tech” tags that pop in staggered. (done)
 − lazy‑loaded screenshots with entrance blur. (done)
 
-Research graph
-− make nodes draggable or clickable to reveal a sidebar detail.
-− animate node connections on scroll (draw as user scrolls).
+✅ **Research graph**
+− make nodes draggable or clickable to reveal a sidebar detail. (done)
+− animate node connections on scroll (draw as user scrolls). (done)
 
 Animated timeline
 − step‑through with a progress indicator or vertical line that grows as you scroll.
