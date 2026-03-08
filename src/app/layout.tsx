@@ -5,12 +5,17 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio - Researcher & Systems Engineer",
+  title: "Researcher & Systems Engineer",
   description: "Futuristic portfolio showcasing research, projects, and expertise in systems engineering.",
   keywords: ["researcher", "systems engineer", "portfolio", "technology"],
   authors: [{ name: "Your Name" }],
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   openGraph: {
-    title: "Portfolio - Researcher & Systems Engineer",
+    title: "Researcher & Systems Engineer",
     description: "Immersive digital experience showcasing innovative research and projects.",
     type: "website",
   },
@@ -24,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
