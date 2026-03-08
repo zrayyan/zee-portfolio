@@ -40,7 +40,7 @@ Consider splitting heavy animations with dynamic() or next/dynamic so they don�
 Add structured data (<script type="application/ld+json">) for projects and blog posts. (done)
 Meta tags for Open Graph/Twitter cards per page. (added for blog posts)
 A “featured” carousel on the homepage pulling latest blog posts or projects.
-Generate category/tag pages for writing, with generateStaticParams as you did for categories.
+Generate category/tag pages for writing, with generateStaticParams as you did for categories. (implemented)
 
 ⚛️ Advanced Ideas
 Scroll‑linked animations via framer-motion’s useScroll or GSAP’s ScrollTrigger.
