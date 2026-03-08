@@ -33,11 +33,31 @@ export default function Research() {
             <div className="relative">
               <svg className="w-full h-96" viewBox="0 0 800 400">
                 {/* Connections */}
-                <line x1="200" y1="150" x2="400" y2="150" stroke="#3B82F6" strokeWidth="2" />
-                <line x1="200" y1="150" x2="600" y2="200" stroke="#3B82F6" strokeWidth="2" />
-                <line x1="400" y1="150" x2="200" y2="250" stroke="#3B82F6" strokeWidth="2" />
-                <line x1="600" y1="200" x2="400" y2="250" stroke="#3B82F6" strokeWidth="2" />
-                <line x1="400" y1="250" x2="600" y2="300" stroke="#3B82F6" strokeWidth="2" />
+                <motion.line x1="200" y1="150" x2="400" y2="150" stroke="#3B82F6" strokeWidth="2"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                />
+                <motion.line x1="200" y1="150" x2="600" y2="200" stroke="#3B82F6" strokeWidth="2"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 1, delay: 0.4 }}
+                />
+                <motion.line x1="400" y1="150" x2="200" y2="250" stroke="#3B82F6" strokeWidth="2"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 1, delay: 0.6 }}
+                />
+                <motion.line x1="600" y1="200" x2="400" y2="250" stroke="#3B82F6" strokeWidth="2"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                />
+                <motion.line x1="400" y1="250" x2="600" y2="300" stroke="#3B82F6" strokeWidth="2"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 1, delay: 1.0 }}
+                />
               </svg>
 
               {/* Nodes */}
