@@ -5,7 +5,7 @@ import { Sphere, Line } from "@react-three/drei";
 import { useRef } from "react";
 import { Group } from "three";
 
-const nodes = [
+const nodes: { position: [number, number, number] }[] = [
   { position: [ -2, 1, 0 ] },
   { position: [ 0, 1, 0 ] },
   { position: [ 2, 1, 0 ] },
@@ -32,7 +32,7 @@ export default function Research3D() {
         <pointLight position={[10,10,10]} />
         <Rotator />
         {nodes.map((n,i)=> (
-          <Sphere key={i} args={[0.3, 32, 32] as [number, number, number]} position={n.position}>
+          <Sphere key={i} args={[0.3, 32, 32]} position={n.position}>
             <meshStandardMaterial color="#3B82F6" />
           </Sphere>
         ))}
