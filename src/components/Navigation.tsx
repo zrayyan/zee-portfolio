@@ -30,14 +30,15 @@ export default function Navigation() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-foreground hover:text-primary transition-colors duration-300"
+              className="text-foreground hover:text-primary transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary"
             >
               {item.name}
             </Link>
           ))}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+            className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+            aria-label="Toggle dark/light theme"
           >
             {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
           </button>

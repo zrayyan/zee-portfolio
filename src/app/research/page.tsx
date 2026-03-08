@@ -80,6 +80,11 @@ export default function Research() {
                     dragElastic={0.2}
                     dragConstraints={{ top: -50, bottom: 50, left: -50, right: 50 }}
                     onClick={() => setSelected(topic)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') setSelected(topic);
+                    }}
                     className={`absolute w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold cursor-pointer hover:bg-primary/80 transition-colors ${
                       index === 0 ? "top-20 left-20" :
                       index === 1 ? "top-20 left-1/2" :
@@ -88,6 +93,7 @@ export default function Research() {
                       "bottom-20 right-20"
                     }`}
                     title={topic.description}
+                    aria-label={topic.title}
                   >
                     {topic.id}
                   </motion.div>
