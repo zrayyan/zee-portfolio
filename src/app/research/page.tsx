@@ -4,6 +4,10 @@ import Navigation from "@/components/Navigation";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useState, useRef } from "react";
+import dynamic from "next/dynamic";
+
+const Research3D = dynamic(() => import('@/components/Research3D'), { ssr: false });
+
 
 const researchTopics = [
   { id: 1, title: "CISSP Security Domains", connections: [2, 3], description: "Comprehensive study of Certified Information Systems Security Professional domains including security operations, assessment, and software development security." },
@@ -38,8 +42,10 @@ export default function Research() {
               Interactive visualization of research areas and their interconnections.
             </p>
 
-            {/* Research Graph */}
+            {/* Research Graph - SVG with 3D fallback */}
             <motion.div className="relative" ref={containerRef} style={{ scale }}>
+              {/* show 3D scene on large screens */}
+              <Research3D />
               <svg className="w-full h-96" viewBox="0 0 800 400">
                 {/* Connections */}
                 <motion.line x1="200" y1="150" x2="400" y2="150" stroke="#3B82F6" strokeWidth="2"
