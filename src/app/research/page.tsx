@@ -234,23 +234,33 @@ export default function Research() {
                   </h3>
                   <div className="flex justify-center gap-4 mb-6">
                     <div className="text-center">
-                      <Image
-                        src="/images/wp-content/uploads/MyBook-VMware-vSphereTroubleshooting.jpg"
-                        alt="VMware vSphere Troubleshooting Book Front Cover"
-                        width={128}
-                        height={192}
-                        className="w-32 h-auto rounded-lg border border-primary/20 mb-2"
-                      />
+                      <div className="relative inline-block group">
+                        <Image
+                          src="/images/wp-content/uploads/MyBook-VMware-vSphereTroubleshooting.jpg"
+                          alt="VMware vSphere Troubleshooting Book Front Cover"
+                          width={128}
+                          height={192}
+                          className="w-32 h-auto rounded-lg border border-primary/20 mb-2"
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
+                          <span className="text-white text-sm">Front</span>
+                        </div>
+                      </div>
                       <p className="text-xs text-foreground/60">Front Cover</p>
                     </div>
                     <div className="text-center">
-                      <Image
-                        src="/images/wp-content/uploads/BAck-MyBook-VMware-vSphereTroubleshooting.jpg"
-                        alt="VMware vSphere Troubleshooting Book Back Cover"
-                        width={128}
-                        height={192}
-                        className="w-32 h-auto rounded-lg border border-primary/20 mb-2"
-                      />
+                      <div className="relative inline-block group">
+                        <Image
+                          src="/images/wp-content/uploads/BAck-MyBook-VMware-vSphereTroubleshooting.jpg"
+                          alt="VMware vSphere Troubleshooting Book Back Cover"
+                          width={128}
+                          height={192}
+                          className="w-32 h-auto rounded-lg border border-primary/20 mb-2"
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
+                          <span className="text-white text-sm">Back</span>
+                        </div>
+                      </div>
                       <p className="text-xs text-foreground/60">Back Cover</p>
                     </div>
                   </div>

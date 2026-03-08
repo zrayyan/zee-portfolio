@@ -2,12 +2,13 @@
 
 import Navigation from "@/components/Navigation";
 import { motion } from "framer-motion";
+import { Apple } from "lucide-react";
 
 const timelineEvents = [
   {
-    year: "2020",
-    title: "Entrepreneurship Journey",
-    description: "Launched my first entrepreneurial venture, laying the foundation for future technical and business projects.",
+    year: "2010",
+    title: "Research & Writing",
+    description: "Started documenting technical knowledge in blog posts, sharing insights on system administration and security.",
   },
   {
     year: "2010",
@@ -40,26 +41,28 @@ const timelineEvents = [
     description: "Expanded expertise into digital marketing strategies, including Facebook ads optimization and scaling techniques for business growth.",
   },
   {
+    year: "2020",
+    title: "Entrepreneurship Journey",
+    description: "Launched my first entrepreneurial venture, laying the foundation for future technical and business projects.",
+  },
+  {
     year: "2025",
     title: "Mobile App Launch",
     description: (
       <>
         Developed the <a href="https://imuslimlife.com" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">iMuslimLife</a> app, available on{' '}
-        <a href="https://apps.apple.com/app/6743494825" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">App Store</a> and{' '}
-        <a href="https://play.google.com/store/apps/details?id=com.rayyan.salatemustaqeem" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">Google Play</a>. Web version at{' '}
+        <a href="https://apps.apple.com/app/6743494825" className="inline-flex items-center gap-1 text-secondary hover:underline" target="_blank" rel="noopener noreferrer">
+          <Apple className="w-4 h-4" /> App Store
+        </a>{' '}
+        and{' '}
+        <a href="https://play.google.com/store/apps/details?id=com.rayyan.salatemustaqeem" className="inline-flex items-center gap-1 text-secondary hover:underline" target="_blank" rel="noopener noreferrer">
+          {/* fallback Android icon using text or emoji */}
+          <span className="w-4 h-4 inline-block text-lg">🤖</span> Google Play
+        </a>.
+        Web version at{' '}
         <a href="https://imuslimlife.com/#/prayer-times" className="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">imuslimlife.com</a>.
       </>
     ),
-  },
-  {
-    year: "2010",
-    title: "Research and Writing",
-    description: "Started documenting technical knowledge in blog posts, sharing insights on system administration and security.",
-  },
-  {
-    year: "2024",
-    title: "Portfolio Development",
-    description: "Created comprehensive online portfolio showcasing technical expertise, research, and professional achievements in systems engineering.",
   },
 ];
 
@@ -156,17 +159,13 @@ export default function About() {
               <div className="space-y-12">
                 {timelineEvents.map((event, index) => (
                   <motion.div
-                    key={event.year}
+                    key={`${event.year}-${index}`}
                     initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className={`flex items-center ${
-                      index % 2 === 0 ? "justify-start" : "justify-end"
-                    }`}
+                    className="flex items-center justify-center"
                   >
-                    <div
-                      className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}
-                    >
+                    <div className="w-1/2 text-center">
                       <div className="bg-background border border-primary/20 rounded-lg p-6 hover:border-primary/50 transition-colors">
                         <h3 className="text-xl font-semibold mb-2 text-secondary">{event.title}</h3>
                         <p className="text-foreground/80 mb-2">{event.description}</p>
