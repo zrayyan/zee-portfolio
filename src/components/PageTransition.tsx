@@ -22,13 +22,14 @@ export default function PageTransition({ children }: { children: ReactNode }) {
           {/* animated eagle sketch */}
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
+            viewBox="0 0 120 80"
             className="w-16 h-16 fill-primary"
-            animate={{ x: [0, 20, 0], rotate: [0, 10, 0] }}
+            animate={{ x: [0, 20, 0], rotate: [0, 5, 0] }}
             transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
           >
-            <path d="M10,50 C20,20 40,20 50,40 C60,20 80,20 90,50 C80,60 70,55 60,60 C50,65 40,60 30,65 C20,70 15,60 10,50 Z" />
-            <path d="M30,50 L40,40 L50,50 L60,40 L70,50" stroke="#fff" strokeWidth="2" fill="none" />
+            {/* simplified eagle silhouette */}
+            <path d="M5 40 Q30 20 55 40 T105 40 Q85 25 75 30 Q65 20 55 30 Q45 20 35 30 Q25 20 15 40 Z" />
+            <path d="M55 40 L55 60 L45 70 L60 70 L65 60 Z" fill="#fff" />
           </motion.svg>
         </div>
       )}
