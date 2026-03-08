@@ -37,7 +37,7 @@ Use next/image with priority on hero assets and loading="lazy" for the rest.
 Audit with Lighthouse and fix any warnings (third‑party scripts, unused JS).
 Consider splitting heavy animations with dynamic() or next/dynamic so they don’t bloat the initial bundle.
 📈 Content & SEO
-Add structured data (<script type="application/ld+json">) for projects and blog posts.
+Add structured data (<script type="application/ld+json">) for projects and blog posts. (done)
 Meta tags for Open Graph/Twitter cards per page.
 A “featured” carousel on the homepage pulling latest blog posts or projects.
 Generate category/tag pages for writing, with generateStaticParams as you did for categories.
