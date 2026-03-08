@@ -18,6 +18,17 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title: post.title,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://yourdomain.com/writing/${post.id}`,
+      siteName: "Researcher & Systems Engineer",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+    },
   };
 }
 
