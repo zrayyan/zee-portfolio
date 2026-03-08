@@ -26,16 +26,20 @@ export default async function CategoryPage({ params }: { params: { category: str
         <section className="py-20">
           <div className="container mx-auto max-w-4xl">
             <h1 className="text-4xl font-bold mb-8 text-primary">Category: {params.category}</h1>
-            <ul className="space-y-6">
-              {filtered.map((post) => (
-                <li key={post.id}>
-                  <Link href={`/writing/${post.id}`} className="text-primary hover:underline">
-                    {post.title}
-                  </Link>
-                  <p className="text-foreground/80 text-sm">{post.date}</p>
-                </li>
-              ))}
-            </ul>
+            {filtered.length === 0 ? (
+              <p className="text-foreground/70">No posts found for this category.</p>
+            ) : (
+              <ul className="space-y-6">
+                {filtered.map((post) => (
+                  <li key={post.id}>
+                    <Link href={`/writing/${post.id}`} className="text-primary hover:underline">
+                      {post.title}
+                    </Link>
+                    <p className="text-foreground/80 text-sm">{post.date}</p>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </section>
       </main>
