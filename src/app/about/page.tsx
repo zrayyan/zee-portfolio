@@ -163,7 +163,6 @@ export default function About() {
             <div className="relative">
               {/* Timeline line */}
               <motion.div
-                ref={timelineRef}
                 className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary/30 origin-top"
                 style={{ scaleY: lineScale }}
               />
