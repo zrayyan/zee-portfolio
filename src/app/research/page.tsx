@@ -1,8 +1,9 @@
 "use client";
 
 import Navigation from "@/components/Navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 
 const researchTopics = [
   { id: 1, title: "CISSP Security Domains", connections: [2, 3], description: "Comprehensive study of Certified Information Systems Security Professional domains including security operations, assessment, and software development security." },
@@ -13,6 +14,8 @@ const researchTopics = [
 ];
 
 export default function Research() {
+  const [selected, setSelected] = useState<typeof researchTopics[0] | null>(null);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
@@ -35,27 +38,32 @@ export default function Research() {
                 {/* Connections */}
                 <motion.line x1="200" y1="150" x2="400" y2="150" stroke="#3B82F6" strokeWidth="2"
                   initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 1, delay: 0.2 }}
                 />
                 <motion.line x1="200" y1="150" x2="600" y2="200" stroke="#3B82F6" strokeWidth="2"
                   initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 1, delay: 0.4 }}
                 />
                 <motion.line x1="400" y1="150" x2="200" y2="250" stroke="#3B82F6" strokeWidth="2"
                   initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 1, delay: 0.6 }}
                 />
                 <motion.line x1="600" y1="200" x2="400" y2="250" stroke="#3B82F6" strokeWidth="2"
                   initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 1, delay: 0.8 }}
                 />
                 <motion.line x1="400" y1="250" x2="600" y2="300" stroke="#3B82F6" strokeWidth="2"
                   initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 1, delay: 1.0 }}
                 />
               </svg>
@@ -68,6 +76,10 @@ export default function Research() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
+                    drag
+                    dragElastic={0.2}
+                    dragConstraints={{ top: -50, bottom: 50, left: -50, right: 50 }}
+                    onClick={() => setSelected(topic)}
                     className={`absolute w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold cursor-pointer hover:bg-primary/80 transition-colors ${
                       index === 0 ? "top-20 left-20" :
                       index === 1 ? "top-20 left-1/2" :
@@ -98,6 +110,27 @@ export default function Research() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Sidebar showing selected topic */}
+            <AnimatePresence>
+              {selected && (
+                <motion.div
+                  initial={{ x: 300, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: 300, opacity: 0 }}
+                  className="fixed top-0 right-0 h-full w-80 bg-background border-l border-primary/20 p-6 shadow-lg z-50"
+                >
+                  <h3 className="text-2xl font-semibold mb-4 text-secondary">{selected.title}</h3>
+                  <p className="text-foreground/80 mb-6">{selected.description}</p>
+                  <button
+                    onClick={() => setSelected(null)}
+                    className="mt-auto px-4 py-2 bg-primary text-white rounded"
+                  >
+                    Close
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Detailed Research Description */}
             <motion.section
