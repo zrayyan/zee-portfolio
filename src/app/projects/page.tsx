@@ -68,6 +68,12 @@ export default function Projects() {
           className="py-20"
         >
           <div className="container mx-auto max-w-6xl">
+            <motion.div
+              className="w-full h-2 mb-8 bg-gradient-to-r from-primary via-highlight to-secondary origin-left"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+            />
             <h1 className="text-5xl font-bold mb-12 text-center text-primary">Projects</h1>
             <p className="text-lg text-center mb-16 text-foreground/80">
               Showcasing innovative solutions and technical implementations.
