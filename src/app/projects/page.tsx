@@ -86,7 +86,8 @@ export default function Projects() {
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -10 }}
+                  whileHover={{ y: -10, rotateY: 10, rotateX: 5 }}
+                  style={{ perspective: 1000 }}
                   className="group relative p-6 bg-background rounded-lg border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -104,21 +105,36 @@ export default function Projects() {
                             width={200}
                             height={150}
                             className="rounded-lg border border-primary/20"
+                            placeholder="blur"
+                            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAE0lEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
                           />
                         ))}
                       </div>
                     )}
                     <p className="text-foreground/80 mb-6">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <motion.div
+                      className="flex flex-wrap gap-2 mb-6"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={{
+                        hidden: {},
+                        visible: { transition: { staggerChildren: 0.1 } },
+                      }}
+                    >
                       {project.technologies.map((tech) => (
-                        <span
+                        <motion.span
                           key={tech}
                           className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm"
+                          variants={{
+                            hidden: { opacity: 0, scale: 0.5 },
+                            visible: { opacity: 1, scale: 1 },
+                          }}
                         >
                           {tech}
-                        </span>
+                        </motion.span>
                       ))}
-                    </div>
+                    </motion.div>
                     <div className="flex space-x-4">
                       <a
                         href={project.github}
