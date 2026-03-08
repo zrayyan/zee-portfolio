@@ -34,8 +34,7 @@ function TypewriterText({ text, delay = 0 }: { text: string; delay?: number }) {
   return <span>{displayText}<span className="animate-pulse">|</span></span>;
 }
 
-function AnimatedBackground({ mouse }: { mouse?: { x: number; y: number } }) {
-  // rotate sphere slightly based on mouse movement
+function RotatingSphere({ mouse }: { mouse?: { x: number; y: number } }) {
   const meshRef = useRef<Mesh>(null!);
   useFrame(() => {
     if (meshRef.current && mouse) {
@@ -45,18 +44,24 @@ function AnimatedBackground({ mouse }: { mouse?: { x: number; y: number } }) {
   });
 
   return (
+    <Sphere ref={meshRef} args={[1, 100, 200]} scale={1.0}>
+      <MeshDistortMaterial
+        color="#4B2E2A" /* dark coffee brown */
+        attach="material"
+        distort={0.25}
+        speed={1.2}
+        roughness={0.2}
+      />
+    </Sphere>
+  );
+}
+
+function AnimatedBackground({ mouse }: { mouse?: { x: number; y: number } }) {
+  return (
     <Canvas className="absolute left-0 md:-left-24 top-0 w-full md:w-[20%] h-full">
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} />
-      <Sphere ref={meshRef} args={[1, 100, 200]} scale={1.0}>
-        <MeshDistortMaterial
-          color="#4B2E2A" /* dark coffee brown */
-          attach="material"
-          distort={0.25}
-          speed={1.2}
-          roughness={0.2}
-        />
-      </Sphere>
+      <RotatingSphere mouse={mouse} />
       <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
     </Canvas>
   );
@@ -64,6 +69,7 @@ function AnimatedBackground({ mouse }: { mouse?: { x: number; y: number } }) {
 
 export default function Hero() {
   const [parallax, setParallax] = useState({ x: 0, y: 0 });
+  // don't render the three‑fiber canvas during SSR; guard with window
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const { currentTarget } = e;
@@ -87,7 +93,7 @@ export default function Hero() {
       />
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black/50" />
-      <AnimatedBackground mouse={parallax} />
+      {typeof window !== 'undefined' && <AnimatedBackground mouse={parallax} />}
       <div
         className="relative z-10 w-full flex justify-center px-4"
         style={{
