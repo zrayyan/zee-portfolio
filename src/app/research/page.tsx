@@ -196,7 +196,7 @@ export default function Research() {
                       href="https://prezi.com/ejnjdcw6b_oy/prexi/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors mr-3"
+                      className="inline-block px-6 py-3 bg-primary text-black rounded-lg hover:bg-primary/80 hover:text-white transition-colors mr-3"
                     >
                       Open Prezi Presentation
                     </a>
@@ -204,7 +204,7 @@ export default function Research() {
                       href="https://zee.linxsol.com/uncategorized/phd-presentation/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block px-6 py-3 bg-secondary text-white rounded-lg hover:bg-secondary/80 transition-colors"
+                      className="inline-block px-6 py-3 bg-secondary text-black rounded-lg hover:bg-secondary/80 hover:text-white transition-colors"
                     >
                       Blog Post / Slides
                     </a>
