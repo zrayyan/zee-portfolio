@@ -23,7 +23,7 @@ Cursor & pointer effects
 − custom cursor ripple or trail on hover, with reduced‑motion fallback.
 
 ✅ **Loading screen / splash**
-− lightweight animated logo or progress bar while the page hydrates. (implemented loader overlay using the 🦅 emoji for a realistic eagle look)
+− lightweight animated logo or progress bar while the page hydrates. (implemented loader overlay using the 🦅 emoji with flying wing‑flap animation)
 
 ✅ **Theme & Accessibility**
 Dark/light toggle with Tailwind’s class strategy and persist in localStorage. (already implemented)
