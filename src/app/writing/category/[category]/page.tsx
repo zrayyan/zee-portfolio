@@ -3,9 +3,6 @@ import { getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-// this route may have no categories at build time; force dynamic to satisfy export
-export const dynamic = 'force-dynamic';
-
 export async function generateStaticParams() {
   const posts = await getSortedPostsData();
   const cats = new Set<string>();
