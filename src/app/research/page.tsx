@@ -1,9 +1,9 @@
 "use client";
 
 import Navigation from "@/components/Navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const researchTopics = [
   { id: 1, title: "CISSP Security Domains", connections: [2, 3], description: "Comprehensive study of Certified Information Systems Security Professional domains including security operations, assessment, and software development security." },
@@ -15,6 +15,12 @@ const researchTopics = [
 
 export default function Research() {
   const [selected, setSelected] = useState<typeof researchTopics[0] | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -33,7 +39,7 @@ export default function Research() {
             </p>
 
             {/* Research Graph */}
-            <div className="relative">
+            <motion.div className="relative" ref={containerRef} style={{ scale }}>
               <svg className="w-full h-96" viewBox="0 0 800 400">
                 {/* Connections */}
                 <motion.line x1="200" y1="150" x2="400" y2="150" stroke="#3B82F6" strokeWidth="2"
@@ -99,7 +105,7 @@ export default function Research() {
                   </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Research Details */}
             <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
