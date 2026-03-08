@@ -19,7 +19,14 @@ export default function PageTransition({ children }: { children: ReactNode }) {
     <>
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center bg-background z-50">
-          <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+          {/* running lion animation */}
+          <motion.div
+            className="text-6xl"
+            animate={{ x: [0, 30, 0] }}
+            transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
+          >
+            🦁
+          </motion.div>
         </div>
       )}
       <AnimatePresence mode="wait">
