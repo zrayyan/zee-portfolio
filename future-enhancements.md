@@ -39,7 +39,7 @@ Consider splitting heavy animations with dynamic() or next/dynamic so they don�
 📈 Content & SEO
 Add structured data (<script type="application/ld+json">) for projects and blog posts. (done)
 Meta tags for Open Graph/Twitter cards per page. (added for blog posts)
-A “featured” carousel on the homepage pulling latest blog posts or projects.
+✅ **Featured carousel** on the homepage pulling latest blog posts or projects. (implemented with draggable projects)
 Generate category/tag pages for writing, with generateStaticParams as you did for categories. (implemented)
 
 ⚛️ Advanced Ideas
