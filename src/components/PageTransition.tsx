@@ -22,8 +22,17 @@ export default function PageTransition({ children }: { children: ReactNode }) {
           {/* emoji-style eagle loader */}
           <motion.div
             className="text-6xl"
-            animate={{ x: [0, 20, 0], rotate: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
+            animate={{
+              x: [0, 20, 0],
+              rotate: [0, 10, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 1.2,
+              ease: "easeInOut",
+              times: [0, 0.5, 1],
+            }}
           >
             🦅
           </motion.div>
