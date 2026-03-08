@@ -32,7 +32,7 @@ Ensure all interactive elements are keyboard‑focusable with visible outlines. 
 Add ARIA labels on custom components (project cards, graph nodes). (added)
 
 ⚙️ Performance & Deployment
-Pre‑generate sitemap.xml at build time (Next has built‑in support).
+Pre‑generate sitemap.xml at build time (Next has built‑in support). (configured)
 Use next/image with priority on hero assets and loading="lazy" for the rest.
 Audit with Lighthouse and fix any warnings (third‑party scripts, unused JS).
 Consider splitting heavy animations with dynamic() or next/dynamic so they don’t bloat the initial bundle.
