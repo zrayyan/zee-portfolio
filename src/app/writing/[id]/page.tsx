@@ -29,10 +29,26 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
   const prev = index < posts.length - 1 ? posts[index + 1] : null;
   const next = index > 0 ? posts[index - 1] : null;
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    author: {
+      "@type": "Person",
+      name: "Zeeshan Munir",
+    },
+    url: `https://yourdomain.com/writing/${post.id}`,
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <main className="pt-20 px-6">
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
         <article className="py-20">
           <div className="container mx-auto max-w-4xl">
             <Link
