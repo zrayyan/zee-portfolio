@@ -2,9 +2,9 @@
 ✅ **Smooth page transitions**
 − use a shared layout <AnimatePresence> + motion.div to fade/slide between routes. (implemented)
 
-Hero‑section upgrades
-− particles, 3‑D objects with react-three-fiber, or a shader‑based gradient.
-− add subtle mouse‑move parallax to text and shapes.
+✅ **Hero‑section upgrades**
+− particles, 3‑D objects with react-three-fiber, or a shader‑based gradient. (3D sphere already present)
+− add subtle mouse‑move parallax to text and shapes. (implemented)
 
 Project cards
 − tilt/3‑D “parallax” on hover (e.g. whileHover={{ rotateY: 10 }})

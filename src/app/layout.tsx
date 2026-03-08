@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import Cursor from "@/components/Cursor";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,16 +22,11 @@ export const metadata: Metadata = {
   },
 };
 
-import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -45,18 +41,9 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Cursor />
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={pathname}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className="flex flex-col min-h-screen"
-            >
-              {children}
-            </motion.div>
-          </AnimatePresence>
+          <PageTransition>
+            {children}
+          </PageTransition>
           <Footer />
         </ThemeProvider>
       </body>
