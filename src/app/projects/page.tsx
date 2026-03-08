@@ -74,6 +74,22 @@ export default function Projects() {
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
             />
+            <script type="application/ld+json">
+              {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                itemListElement: projects.map((p, i) => ({
+                  "@type": "ListItem",
+                  position: i+1,
+                  item: {
+                    "@type": "SoftwareApplication",
+                    name: p.title,
+                    description: p.description,
+                    url: p.demo || p.github,
+                  }
+                }))
+              })}
+            </script>
             <h1 className="text-5xl font-bold mb-12 text-center text-primary">Projects</h1>
             <p className="text-lg text-center mb-16 text-foreground/80">
               Showcasing innovative solutions and technical implementations.
