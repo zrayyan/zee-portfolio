@@ -163,7 +163,7 @@ export default function About() {
                     initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-center justify-center"
+                    className={`flex items-center ${index % 2 === 0 ? "justify-start" : "justify-end"}`}
                   >
                     <div className="w-1/2 text-center">
                       <div className="bg-background border border-primary/20 rounded-lg p-6 hover:border-primary/50 transition-colors">
