@@ -11,7 +11,8 @@ export default function PageTransition({ children }: { children: ReactNode }) {
   // hide loader after first mount or when path changes
   useEffect(() => {
     setLoading(true);
-    const t = setTimeout(() => setLoading(false), 500);
+    // keep loader visible slightly longer for slower feel
+    const t = setTimeout(() => setLoading(false), 900);
     return () => clearTimeout(t);
   }, [pathname]);
 
@@ -29,7 +30,7 @@ export default function PageTransition({ children }: { children: ReactNode }) {
             }}
             transition={{
               repeat: Infinity,
-              duration: 1.2,
+              duration: 1.8,
               ease: "easeInOut",
               times: [0, 0.5, 1],
             }}
