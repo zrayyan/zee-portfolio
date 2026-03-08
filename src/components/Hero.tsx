@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Mesh } from "three"; // used to type the sphere mesh
+
 
 function TypewriterText({ text, delay = 0 }: { text: string; delay?: number }) {
   const [displayText, setDisplayText] = useState("");
@@ -32,12 +34,21 @@ function TypewriterText({ text, delay = 0 }: { text: string; delay?: number }) {
   return <span>{displayText}<span className="animate-pulse">|</span></span>;
 }
 
-function AnimatedBackground() {
+function AnimatedBackground({ mouse }: { mouse?: { x: number; y: number } }) {
+  // rotate sphere slightly based on mouse movement
+  const meshRef = useRef<Mesh>(null!);
+  useFrame(() => {
+    if (meshRef.current && mouse) {
+      meshRef.current.rotation.x = mouse.y / 100;
+      meshRef.current.rotation.y = mouse.x / 100;
+    }
+  });
+
   return (
     <Canvas className="absolute left-0 md:-left-24 top-0 w-full md:w-[20%] h-full">
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} />
-      <Sphere args={[1, 100, 200]} scale={1.0}>
+      <Sphere ref={meshRef} args={[1, 100, 200]} scale={1.0}>
         <MeshDistortMaterial
           color="#4B2E2A" /* dark coffee brown */
           attach="material"
@@ -52,8 +63,21 @@ function AnimatedBackground() {
 }
 
 export default function Hero() {
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const { currentTarget } = e;
+    const rect = currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 30; // range ±15px
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 30;
+    setParallax({ x, y });
+  };
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section
+      className="relative h-screen flex items-center justify-center overflow-hidden"
+      onMouseMove={handleMouseMove}
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -63,8 +87,13 @@ export default function Hero() {
       />
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black/50" />
-      <AnimatedBackground />
-      <div className="relative z-10 w-full flex justify-center px-4">
+      <AnimatedBackground mouse={parallax} />
+      <div
+        className="relative z-10 w-full flex justify-center px-4"
+        style={{
+          transform: `translate(${parallax.x / 2}px, ${parallax.y / 2}px)`
+        }}
+      >
         <div className="text-center max-w-md lg:max-w-lg xl:max-w-xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
