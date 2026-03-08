@@ -43,6 +43,6 @@ Meta tags for Open Graph/Twitter cards per page. (added for blog posts)
 Generate category/tag pages for writing, with generateStaticParams as you did for categories. (implemented)
 
 ⚛️ Advanced Ideas
-Scroll‑linked animations via framer-motion’s useScroll or GSAP’s ScrollTrigger.
+Scroll‑linked animations via framer-motion’s useScroll or GSAP’s ScrollTrigger. (scaled graph on research page)
 3‑D scene on the research page as a fallback for the SVG graph.
 Realtime search/filter on the projects or writing lists using client‑side state. (optional)
