@@ -44,5 +44,5 @@ Generate category/tag pages for writing, with generateStaticParams as you did fo
 
 ⚛️ Advanced Ideas
 Scroll‑linked animations via framer-motion’s useScroll or GSAP’s ScrollTrigger. (scaled graph on research page)
-3‑D scene on the research page as a fallback for the SVG graph.
+3‑D scene on the research page as a fallback for the SVG graph. (added a dynamic 3D network background)
 Realtime search/filter on the projects or writing lists using client‑side state. (optional)
