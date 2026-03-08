@@ -38,6 +38,23 @@ const projects = [
     github: "#",
     demo: "/namaz/pray.html",
   },
+  {
+    title: "iMuslimLife",
+    description: "Cross-platform prayer and Islamic lifestyle app available on web, iOS, and Android providing accurate prayer times, Qibla direction, and religious content.",
+    technologies: ["React", "Next.js", "Mobile", "PWA"],
+    github: "#",
+    demo: "https://imuslimlife.com/",
+    images: ["/images/imuslimlife.svg"],
+  },
+  {
+    title: "Salat-e-Mustaqeem Prayer App",
+    description: "Companion mobile application for Salat-e-Mustaqeem offering prayer schedules, reminders, and community features.",
+    technologies: ["React Native", "Firebase", "Mobile"],
+    github: "#",
+    demo: "https://imuslimlife.com/#/mobile-app",
+    images: ["/images/salat-app.svg"],
+  },
+
 ];
 
 export default function Projects() {
