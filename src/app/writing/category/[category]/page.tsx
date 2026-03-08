@@ -10,15 +10,18 @@ export async function generateStaticParams() {
   const posts = await getSortedPostsData();
   const cats = new Set<string>();
   posts.forEach((p) => p.categories?.forEach((c) => cats.add(c)));
-  return Array.from(cats).map((category) => ({ category }));
+  const arr = Array.from(cats).map((category) => ({ category }));
+  // If there are no real categories yet, provide a dummy slug so the
+  // dynamic route can be exported. the page will simply render a "nothing
+  // here" message instead of 404.
+  return arr.length > 0 ? arr : [{ category: "none" }];
 }
 
 export default async function CategoryPage({ params }: { params: { category: string } }) {
   const posts = await getSortedPostsData();
   const filtered = posts.filter((p) => p.categories?.includes(params.category));
-  if (filtered.length === 0) {
-    notFound();
-  }
+  // if no posts match we show a friendly message rather than throw a 404;
+  // this handles our placeholder slug or genuinely empty categories.
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
