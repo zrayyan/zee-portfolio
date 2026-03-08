@@ -7,6 +7,22 @@ import Image from "next/image";
 
 const projects = [
   {
+    title: "iMuslimLife",
+    description: "Cross-platform prayer and Islamic lifestyle app available on web, iOS, and Android providing accurate prayer times, Qibla direction, and religious content.",
+    technologies: ["React", "Next.js", "Mobile", "PWA"],
+    github: "#",
+    demo: "https://imuslimlife.com/",
+    images: ["/images/imuslimlife.png"],
+  },
+  {
+    title: "Salat-e-Mustaqeem Prayer App",
+    description: "Companion mobile application for Salat-e-Mustaqeem offering prayer schedules, reminders, and community features.",
+    technologies: ["React Native", "Firebase", "Mobile"],
+    github: "#",
+    demo: "https://imuslimlife.com/#/mobile-app",
+    images: ["/images/salat-e-mustaqeem.png"],
+  },
+  {
     title: "OpenStack Havana Installation",
     description: "Complete installation and configuration of OpenStack Havana cloud platform on CentOS/RHEL systems with high availability and multi-node architecture.",
     technologies: ["OpenStack", "CentOS", "RHEL", "Cloud Computing"],
@@ -38,23 +54,6 @@ const projects = [
     github: "#",
     demo: "/namaz/pray.html",
   },
-  {
-    title: "iMuslimLife",
-    description: "Cross-platform prayer and Islamic lifestyle app available on web, iOS, and Android providing accurate prayer times, Qibla direction, and religious content.",
-    technologies: ["React", "Next.js", "Mobile", "PWA"],
-    github: "#",
-    demo: "https://imuslimlife.com/",
-    images: ["/images/imuslimlife.svg"],
-  },
-  {
-    title: "Salat-e-Mustaqeem Prayer App",
-    description: "Companion mobile application for Salat-e-Mustaqeem offering prayer schedules, reminders, and community features.",
-    technologies: ["React Native", "Firebase", "Mobile"],
-    github: "#",
-    demo: "https://imuslimlife.com/#/mobile-app",
-    images: ["/images/salat-app.svg"],
-  },
-
 ];
 
 export default function Projects() {
