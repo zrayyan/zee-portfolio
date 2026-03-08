@@ -76,7 +76,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Featured Projects */}
+      {/* Featured Projects Carousel */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -85,7 +85,7 @@ export default function Home() {
       >
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold mb-12 text-center text-primary">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <motion.div className="flex space-x-6 overflow-x-auto py-4" drag="x" dragConstraints={{ left: -500, right: 0 }}>
             {[
               { title: "OpenStack Cloud Deployment", desc: "Multi-node OpenStack Havana installation on CentOS/RHEL with high availability", tech: ["OpenStack", "CentOS", "MySQL"] },
               { title: "Enterprise VPN Solution", desc: "Site-to-site VPN implementation using pfSense and Dell SonicWall", tech: ["pfSense", "VPN", "Network Security"] },
@@ -95,7 +95,7 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 bg-background rounded-lg border border-primary/20 hover:shadow-lg hover:shadow-primary/20 transition-all"
+                className="min-w-[300px] p-6 bg-background rounded-lg border border-primary/20 hover:shadow-lg hover:shadow-primary/20 transition-all"
               >
                 <h3 className="text-2xl font-semibold mb-4 text-highlight">{project.title}</h3>
                 <p className="text-foreground/80 mb-4">{project.desc}</p>
@@ -108,7 +108,7 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </motion.section>
 
