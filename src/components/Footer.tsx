@@ -7,9 +7,9 @@ export default function Footer() {
             <h3 className="text-xl font-semibold text-primary mb-2">For inspirations, special offers and much more</h3>
             <div className="flex items-center space-x-4 mt-2">
               <a href="https://www.pinterest.com/" className="text-foreground/80 hover:text-primary">Pinterest</a>
-              <a href="https://www.facebook.com/" className="text-foreground/80 hover:text-primary">Facebook</a>
+              <a href="https://www.facebook.com/MuhammadZeeshanMunir" className="text-foreground/80 hover:text-primary">Facebook</a>
               <a href="https://www.instagram.com/" className="text-foreground/80 hover:text-primary">Instagram</a>
-              <a href="https://twitter.com/" className="text-foreground/80 hover:text-primary">Twitter</a>
+              <a href="https://x.com/MZMunir" className="text-foreground/80 hover:text-primary">Twitter</a>
             </div>
           </div>
 
