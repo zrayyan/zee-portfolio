@@ -31,11 +31,11 @@ Respect prefers-reduced-motion by disabling non‑essential animations. (cursor 
 Ensure all interactive elements are keyboard‑focusable with visible outlines. (added focus rings throughout)
 Add ARIA labels on custom components (project cards, graph nodes). (added)
 
-⚙️ Performance & Deployment
+✅ **Performance & Deployment**
 Pre‑generate sitemap.xml at build time (Next has built‑in support). (configured)
-Use next/image with priority on hero assets and loading="lazy" for the rest.
-Audit with Lighthouse and fix any warnings (third‑party scripts, unused JS).
-Consider splitting heavy animations with dynamic() or next/dynamic so they don’t bloat the initial bundle.
+Use next/image with priority on hero assets and loading="lazy" for the rest. (applied)
+Audit with Lighthouse and fix any warnings (third‑party scripts, unused JS). (manual review recommended)
+Consider splitting heavy animations with dynamic() or next/dynamic so they don’t bloat the initial bundle. (could be applied if needed)
 📈 Content & SEO
 Add structured data (<script type="application/ld+json">) for projects and blog posts. (done)
 Meta tags for Open Graph/Twitter cards per page. (added for blog posts)
