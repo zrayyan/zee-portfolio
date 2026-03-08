@@ -6,10 +6,10 @@
 − particles, 3‑D objects with react-three-fiber, or a shader‑based gradient. (3D sphere already present)
 − add subtle mouse‑move parallax to text and shapes. (implemented)
 
-Project cards
-− tilt/3‑D “parallax” on hover (e.g. whileHover={{ rotateY: 10 }})
-− animated “tech” tags that pop in staggered.
-− lazy‑loaded screenshots with entrance blur.
+✅ **Project cards**
+− tilt/3‑D “parallax” on hover (e.g. whileHover={{ rotateY: 10 }}). (done)
+− animated “tech” tags that pop in staggered. (done)
+− lazy‑loaded screenshots with entrance blur. (done)
 
 Research graph
 − make nodes draggable or clickable to reveal a sidebar detail.
