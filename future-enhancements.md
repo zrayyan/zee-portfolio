@@ -1,6 +1,6 @@
 🎯 Interaction & Visual Flair
 ✅ **Smooth page transitions**
-− use a shared layout <AnimatePresence> + motion.div to fade/slide between routes. (implemented)
+− use a shared layout <AnimatePresence> + motion.div to fade/slide between routes. (implemented using PageTransition client component)
 
 ✅ **Hero‑section upgrades**
 − particles, 3‑D objects with react-three-fiber, or a shader‑based gradient. (3D sphere already present)
